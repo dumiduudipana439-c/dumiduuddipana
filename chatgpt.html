@@ -7,15 +7,22 @@
 
 <meta
 name=“description”
-content=“Use ChatGPT as your AI learning assistant with DumiduUddipana.”
+content=“Chat with an AI assistant and get help learning with DumiduUddipana.”
 
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
+<!-- =====================================
+     NAVBAR
+     ===================================== -->
 <header class="navbar">
   <a href="index.html" class="logo">
-    <span class="logo-box">DU</span>
-    <span>DumiduUddipana</span>
+<span class="logo-box">
+  DU
+</span>
+<span>
+  DumiduUddipana
+</span>
   </a>
   <nav id="navMenu">
 <a href="index.html">
@@ -33,153 +40,145 @@ content=“Use ChatGPT as your AI learning assistant with DumiduUddipana.”
 <a href="contact.html">
   Contact
 </a>
-<a href="login.html" class="login-button">
+<a
+  href="login.html"
+  class="login-button"
+>
   Login
 </a>
   </nav>
 </header>
 <!-- =====================================
-     CHATGPT HERO
+     CHATGPT PAGE
      ===================================== -->
 <section class="page-hero">
   <div class="eyebrow">
-    AI ASSISTANT
+    DUMIDUUDDIPANA AI
   </div>
   <h1>
-    ChatGPT
+    🤖 ChatGPT AI Assistant
   </h1>
   <p>
-    Your AI learning assistant
+    Ask questions, learn faster and get help with your learning.
   </p>
 </section>
 <!-- =====================================
-     CHATGPT CONTENT
+     CHAT CARD
      ===================================== -->
 <section class="section">
   <div
     style="
-      max-width:900px;
+      max-width:800px;
       margin:0 auto;
     "
   >
-<article
+<div
   class="course-card"
   style="
-    text-align:center;
-    padding:40px;
+    padding:0;
+    overflow:hidden;
   "
 >
+  <!-- CHAT HEADER -->
   <div
     style="
-      font-size:70px;
-      margin-bottom:20px;
+      padding:22px;
+      background:#111;
+      color:white;
     "
   >
-    🤖
+    <div
+      style="
+        font-size:32px;
+        margin-bottom:8px;
+      "
+    >
+      🤖
+    </div>
+    <h2
+      style="
+        margin:0 0 5px;
+      "
+    >
+      ChatGPT
+    </h2>
+    <p
+      style="
+        margin:0;
+        opacity:.8;
+      "
+    >
+      DumiduUddipana AI Learning Assistant
+    </p>
   </div>
-  <span class="tag">
-    AI ASSISTANT
-  </span>
-  <h2 style="margin-top:15px;">
-    Learn with ChatGPT
-  </h2>
-  <p
+  <!-- CHAT MESSAGES -->
+  <div
+    id="chatMessages"
     style="
-      max-width:650px;
-      margin:15px auto;
-      line-height:1.8;
+      min-height:350px;
+      max-height:500px;
+      overflow-y:auto;
+      padding:20px;
+      background:#f7f7f7;
     "
   >
-    ChatGPT can help you understand lessons,
-    generate ideas, write prompts, explain
-    difficult topics and learn new digital skills.
-  </p>
-  <!-- FEATURES -->
+    <div
+      style="
+        background:white;
+        padding:15px;
+        border-radius:14px;
+        margin-bottom:12px;
+        box-shadow:0 2px 8px rgba(0,0,0,.06);
+      "
+    >
+      👋 <strong>Hello!</strong>
+      <br><br>
+      I'm your DumiduUddipana AI Assistant.
+      <br>
+      Ask me something about AI, YouTube,
+      technology or your courses.
+    </div>
+  </div>
+  <!-- CHAT INPUT -->
   <div
     style="
-      display:grid;
-      grid-template-columns:
-        repeat(auto-fit,minmax(200px,1fr));
-      gap:15px;
-      margin-top:30px;
+      display:flex;
+      gap:10px;
+      padding:18px;
+      border-top:1px solid #ddd;
+      background:white;
     "
   >
-    <div
+    <input
+      id="chatInput"
+      type="text"
+      placeholder="Ask something..."
       style="
-        padding:20px;
-        border-radius:15px;
-        background:#f5f5f5;
-      "
-    >
-      💡
-      <h3>
-        Ask Questions
-      </h3>
-      <p>
-        Get explanations and answers.
-      </p>
-    </div>
-    <div
-      style="
-        padding:20px;
-        border-radius:15px;
-        background:#f5f5f5;
-      "
-    >
-      ✍️
-      <h3>
-        Create Content
-      </h3>
-      <p>
-        Get help with ideas and writing.
-      </p>
-    </div>
-    <div
-      style="
-        padding:20px;
-        border-radius:15px;
-        background:#f5f5f5;
-      "
-    >
-      🎓
-      <h3>
-        Learn Faster
-      </h3>
-      <p>
-        Understand difficult topics easily.
-      </p>
-    </div>
-  </div>
-  <!-- OPEN CHATGPT BUTTON -->
-  <div style="margin-top:35px;">
-    <a
-      href="https://chatgpt.com/"
-      target="_blank"
-      rel="noopener noreferrer"
-      style="
-        display:inline-block;
-        padding:14px 28px;
-        background:#111;
-        color:#fff;
-        text-decoration:none;
+        flex:1;
+        padding:14px;
+        border:1px solid #ddd;
         border-radius:12px;
-        font-weight:600;
         font-size:16px;
+        outline:none;
       "
     >
-      🤖 Open ChatGPT →
-    </a>
+    <button
+      id="sendChatButton"
+      type="button"
+      style="
+        padding:14px 20px;
+        border:0;
+        border-radius:12px;
+        background:#111;
+        color:white;
+        font-weight:600;
+        cursor:pointer;
+      "
+    >
+      Send
+    </button>
   </div>
-  <p
-    style="
-      margin-top:18px;
-      font-size:13px;
-      color:#777;
-    "
-  >
-    ChatGPT will open in a new tab.
-  </p>
-</article>
+</div>
   </div>
 </section>
 <!-- =====================================
@@ -190,6 +189,107 @@ content=“Use ChatGPT as your AI learning assistant with DumiduUddipana.”
     © 2026 DumiduUddipana. All Rights Reserved.
   </div>
 </footer>
+<!-- =====================================
+     SCRIPT
+     ===================================== -->
 <script src="script.js"></script>
+<script>
+document.addEventListener(
+  "DOMContentLoaded",
+  function () {
+    const input =
+      document.getElementById(
+        "chatInput"
+      );
+    const sendButton =
+      document.getElementById(
+        "sendChatButton"
+      );
+    const messages =
+      document.getElementById(
+        "chatMessages"
+      );
+    function addMessage(
+      text,
+      isUser
+    ) {
+      const message =
+        document.createElement(
+          "div"
+        );
+      message.style.padding =
+        "15px";
+      message.style.borderRadius =
+        "14px";
+      message.style.marginBottom =
+        "12px";
+      message.style.lineHeight =
+        "1.6";
+      if (isUser) {
+        message.style.background =
+          "#111";
+        message.style.color =
+          "white";
+        message.style.marginLeft =
+          "40px";
+      } else {
+        message.style.background =
+          "white";
+        message.style.marginRight =
+          "40px";
+        message.style.boxShadow =
+          "0 2px 8px rgba(0,0,0,.06)";
+      }
+      message.textContent =
+        text;
+      messages.appendChild(
+        message
+      );
+      messages.scrollTop =
+        messages.scrollHeight;
+    }
+    async function sendMessage() {
+      const text =
+        input.value.trim();
+      if (!text) return;
+      addMessage(
+        text,
+        true
+      );
+      input.value =
+        "";
+      /*
+        Temporary demo response.
+        මේ කොටස පස්සේ
+        real OpenAI API backend
+        එකට connect කරමු.
+      */
+      setTimeout(
+        function () {
+          addMessage(
+            "🤖 Demo mode: Your message was received. Real ChatGPT connection will be connected next.",
+            false
+          );
+        },
+        600
+      );
+    }
+    sendButton.addEventListener(
+      "click",
+      sendMessage
+    );
+    input.addEventListener(
+      "keydown",
+      function (event) {
+        if (
+          event.key === "Enter"
+        ) {
+          sendMessage();
+        }
+      }
+    );
+  }
+);
+</script>
 </body>
 </html>
