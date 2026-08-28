@@ -4,38 +4,72 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Courses | DumiduUddipana</title>
-  <meta name="description" content="Learn practical AI, YouTube and digital skills with DumiduUddipana courses.">
+
+<meta
+name=“description”
+content=“Learn practical AI, YouTube and digital skills with DumiduUddipana courses.”
+
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
+<!-- =====================================
+     NAVBAR
+     ===================================== -->
 <header class="navbar">
   <a href="index.html" class="logo">
-    <span class="logo-box">DU</span>
-    <span>DumiduUddipana</span>
+<span class="logo-box">
+  DU
+</span>
+<span>
+  DumiduUddipana
+</span>
   </a>
   <nav id="navMenu">
-<a href="index.html">Home</a>
-<a href="courses.html">Courses</a>
-<a href="ebook.html">eBook</a>
-<a href="faq.html">FAQ</a>
-<a href="contact.html">Contact</a>
-<a href="login.html" class="login-button">
+<a href="index.html">
+  Home
+</a>
+<a href="courses.html">
+  Courses
+</a>
+<a href="ebook.html">
+  eBook
+</a>
+<a href="faq.html">
+  FAQ
+</a>
+<a href="contact.html">
+  Contact
+</a>
+<a
+  href="login.html"
+  class="login-button"
+>
   Login
 </a>
   </nav>
 </header>
+<!-- =====================================
+     PAGE HERO
+     ===================================== -->
 <section class="page-hero">
   <div class="eyebrow">
     DUMIDUUDDIPANA
   </div>
-  <h1>Our Courses</h1>
+  <h1>
+    Our Courses
+  </h1>
   <p>
     Learn practical digital skills and create more.
   </p>
 </section>
+<!-- =====================================
+     COURSES
+     ===================================== -->
 <section class="section">
   <div class="course-grid">
-<!-- COURSE 1 -->
+<!-- =================================
+     COURSE 1
+     ================================= -->
 <article class="course-card">
   <div class="course-cover purple">
     🎬
@@ -65,7 +99,9 @@
     </div>
   </div>
 </article>
-<!-- COURSE 2 -->
+<!-- =================================
+     COURSE 2
+     ================================= -->
 <article class="course-card">
   <div class="course-cover blue">
     ✍️
@@ -95,7 +131,9 @@
     </div>
   </div>
 </article>
-<!-- COURSE 3 -->
+<!-- =================================
+     COURSE 3
+     ================================= -->
 <article class="course-card">
   <div class="course-cover orange">
     🖼️
@@ -125,7 +163,9 @@
     </div>
   </div>
 </article>
-<!-- COURSE 4 -->
+<!-- =================================
+     COURSE 4
+     ================================= -->
 <article class="course-card">
   <div class="course-cover purple">
     🚀
@@ -155,40 +195,40 @@
     </div>
   </div>
 </article>
-  </div>
-</section>
-<!-- =====================================
-     CHATGPT AI ASSISTANT CARD
-     ===================================== -->
+<!-- =================================
+     CHATGPT AI ASSISTANT
+     ================================= -->
 <article class="course-card">
   <div class="course-cover blue">
     🤖
   </div>
   <div class="course-info">
-<span class="tag">
-  AI ASSISTANT
-</span>
-<h3>
-  ChatGPT
-</h3>
-<p>
-  Ask questions, learn faster and get
-  help with your courses using AI.
-</p>
-<div class="course-bottom">
-  <span>
-    AI Learning
-  </span>
-  <a
-    href="chatgpt.html"
-    class="course-start"
-    data-course="ChatGPT"
-  >
-    Start Chat →
-  </a>
-</div>
+    <span class="tag">
+      AI ASSISTANT
+    </span>
+    <h3>
+      ChatGPT
+    </h3>
+    <p>
+      Ask questions, learn faster and get
+      help with your courses using AI.
+    </p>
+    <div class="course-bottom">
+      <span>
+        AI Learning
+      </span>
+      <a
+        href="chatgpt.html"
+        class="course-start"
+        data-course="ChatGPT"
+      >
+        Start Chat →
+      </a>
+    </div>
   </div>
 </article>
+  </div>
+</section>
 <!-- =====================================
      LOGIN / REGISTER MODAL
      ===================================== -->
@@ -239,7 +279,12 @@
 <h2>
   Register / Login to Start Learning
 </h2>
-<p style="color:#666; line-height:1.6;">
+<p
+  style="
+    color:#666;
+    line-height:1.6;
+  "
+>
   Please create an account or login
   to access this course.
 </p>
@@ -283,11 +328,17 @@
 </div>
   </div>
 </div>
+<!-- =====================================
+     FOOTER
+     ===================================== -->
 <footer>
   <div class="copyright">
     © 2026 DumiduUddipana. All Rights Reserved.
   </div>
 </footer>
+<!-- =====================================
+     MAIN SCRIPT
+     ===================================== -->
 <script src="script.js"></script>
 <!-- =====================================
      COURSE LOGIN CHECK
@@ -297,8 +348,8 @@ document.addEventListener(
   "DOMContentLoaded",
   async function () {
     /*
-      Wait until the existing
-      Supabase client is ready.
+      Wait for Supabase client
+      to initialize.
     */
     let attempts = 0;
     while (
@@ -306,7 +357,8 @@ document.addEventListener(
       !supabaseClient
     ) {
       await new Promise(
-        resolve => setTimeout(resolve, 100)
+        resolve =>
+          setTimeout(resolve, 100)
       );
       attempts++;
       if (attempts > 50) {
@@ -316,6 +368,9 @@ document.addEventListener(
         return;
       }
     }
+    /* ===============================
+       ELEMENTS
+       =============================== */
     const modal =
       document.getElementById(
         "courseLoginModal"
@@ -328,9 +383,9 @@ document.addEventListener(
       document.querySelectorAll(
         ".course-start"
       );
-    /*
-      CHECK LOGIN
-    */
+    /* ===============================
+       CHECK LOGIN
+       =============================== */
     async function isUserLoggedIn() {
       try {
         const {
@@ -347,9 +402,9 @@ document.addEventListener(
         return false;
       }
     }
-    /*
-      COURSE CLICK
-    */
+    /* ===============================
+       COURSE CLICK
+       =============================== */
     courseLinks.forEach(
       function (link) {
         link.addEventListener(
@@ -361,15 +416,15 @@ document.addEventListener(
             if (loggedIn) {
               /*
                 User is logged in.
-                Open course.
+                Open selected course.
               */
               window.location.href =
-                "course.html";
+                link.getAttribute("href");
               return;
             }
             /*
-              User is NOT logged in.
-              Show login/register modal.
+              User is not logged in.
+              Show modal.
             */
             if (modal) {
               modal.style.display =
@@ -379,21 +434,23 @@ document.addEventListener(
         );
       }
     );
-    /*
-      CLOSE MODAL
-    */
+    /* ===============================
+       CLOSE MODAL
+       =============================== */
     if (closeButton) {
       closeButton.addEventListener(
         "click",
         function () {
-          modal.style.display =
-            "none";
+          if (modal) {
+            modal.style.display =
+              "none";
+          }
         }
       );
     }
-    /*
-      CLOSE WHEN CLICKING OUTSIDE
-    */
+    /* ===============================
+       CLICK OUTSIDE MODAL
+       =============================== */
     if (modal) {
       modal.addEventListener(
         "click",
@@ -407,6 +464,21 @@ document.addEventListener(
         }
       );
     }
+    /* ===============================
+       ESC KEY
+       =============================== */
+    document.addEventListener(
+      "keydown",
+      function (event) {
+        if (
+          event.key === "Escape" &&
+          modal
+        ) {
+          modal.style.display =
+            "none";
+        }
+      }
+    );
   }
 );
 </script>
