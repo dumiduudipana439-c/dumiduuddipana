@@ -2,21 +2,34 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Courses | DumiduUddipana</title>
+
+<meta
+name=“viewport”
+content=“width=device-width, initial-scale=1.0”
+
+  <title>
+    Courses | DumiduUddipana
+  </title>
 
 <meta
 name=“description”
 content=“Learn practical AI, YouTube and digital skills with DumiduUddipana courses.”
 
-  <link rel="stylesheet" href="style.css">
+  <link
+    rel="stylesheet"
+    href="style.css"
+  >
 </head>
 <body>
 <!-- =====================================
      NAVBAR
      ===================================== -->
 <header class="navbar">
-  <a href="index.html" class="logo">
+
+<a
+href=“index.html”
+class=“logo”
+
 <span class="logo-box">
   DU
 </span>
@@ -347,10 +360,6 @@ content=“Learn practical AI, YouTube and digital skills with DumiduUddipana co
 document.addEventListener(
   "DOMContentLoaded",
   async function () {
-    /*
-      Wait for Supabase client
-      to initialize.
-    */
     let attempts = 0;
     while (
       typeof supabaseClient === "undefined" ||
@@ -414,18 +423,10 @@ document.addEventListener(
             const loggedIn =
               await isUserLoggedIn();
             if (loggedIn) {
-              /*
-                User is logged in.
-                Open selected course.
-              */
               window.location.href =
                 link.getAttribute("href");
               return;
             }
-            /*
-              User is not logged in.
-              Show modal.
-            */
             if (modal) {
               modal.style.display =
                 "flex";
