@@ -1,0 +1,446 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+
+<meta
+name=“viewport”
+content=“width=device-width, initial-scale=1.0”
+
+  <title>ChatGPT AI Assistant | DumiduUddipana</title>
+
+<meta
+name=“description”
+content=“Chat with the DumiduUddipana AI Assistant.”
+
+  <link
+    rel="stylesheet"
+    href="style.css"
+  >
+  <style>
+    /* ================================
+       CHATGPT PAGE
+       ================================ */
+    .chat-page {
+      min-height: calc(100vh - 150px);
+      padding: 40px 20px;
+      background: #f7f7f8;
+    }
+    .chat-container {
+      width: 100%;
+      max-width: 900px;
+      margin: 0 auto;
+      background: #ffffff;
+      border-radius: 20px;
+      overflow: hidden;
+      box-shadow: 0 15px 50px rgba(0,0,0,0.10);
+      border: 1px solid #e5e5e5;
+    }
+    /* HEADER */
+    .chat-header {
+      padding: 22px 25px;
+      border-bottom: 1px solid #e8e8e8;
+      display: flex;
+      align-items: center;
+      gap: 15px;
+      background: #ffffff;
+    }
+    .chat-icon {
+      width: 48px;
+      height: 48px;
+      border-radius: 14px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 25px;
+      background: #111111;
+      color: #ffffff;
+    }
+    .chat-header h1 {
+      margin: 0;
+      font-size: 20px;
+    }
+    .chat-header p {
+      margin: 4px 0 0;
+      color: #777;
+      font-size: 13px;
+    }
+    /* CHAT AREA */
+    .chat-messages {
+      min-height: 430px;
+      max-height: 600px;
+      overflow-y: auto;
+      padding: 25px;
+    }
+    .message {
+      display: flex;
+      margin-bottom: 20px;
+    }
+    .message-content {
+      max-width: 78%;
+      padding: 14px 17px;
+      border-radius: 15px;
+      line-height: 1.6;
+      font-size: 15px;
+      white-space: pre-wrap;
+    }
+    .message.ai {
+      justify-content: flex-start;
+    }
+    .message.ai .message-content {
+      background: #f0f0f0;
+      color: #222;
+      border-bottom-left-radius: 5px;
+    }
+    .message.user {
+      justify-content: flex-end;
+    }
+    .message.user .message-content {
+      background: #111;
+      color: #fff;
+      border-bottom-right-radius: 5px;
+    }
+    /* TYPING */
+    .typing {
+      color: #777;
+      font-size: 14px;
+      padding: 10px 15px;
+    }
+    /* INPUT */
+    .chat-input-area {
+      border-top: 1px solid #e8e8e8;
+      padding: 18px;
+      background: #ffffff;
+    }
+    .chat-form {
+      display: flex;
+      gap: 10px;
+      align-items: flex-end;
+    }
+    .chat-input {
+      flex: 1;
+      min-height: 50px;
+      max-height: 140px;
+      resize: vertical;
+      border: 1px solid #d8d8d8;
+      border-radius: 14px;
+      padding: 14px;
+      font-family: inherit;
+      font-size: 15px;
+      outline: none;
+      box-sizing: border-box;
+    }
+    .chat-input:focus {
+      border-color: #111;
+    }
+    .send-button {
+      height: 50px;
+      padding: 0 20px;
+      border: none;
+      border-radius: 13px;
+      background: #111;
+      color: #fff;
+      font-weight: 600;
+      cursor: pointer;
+    }
+    .send-button:hover {
+      opacity: 0.85;
+    }
+    .send-button:disabled {
+      opacity: 0.5;
+      cursor: not-allowed;
+    }
+    .chat-note {
+      margin: 10px 4px 0;
+      font-size: 11px;
+      color: #888;
+      text-align: center;
+    }
+    .back-link {
+      display: inline-block;
+      margin-bottom: 18px;
+      color: #111;
+      text-decoration: none;
+      font-weight: 600;
+    }
+    /* MOBILE */
+    @media (max-width: 600px) {
+      .chat-page {
+        padding: 20px 10px;
+      }
+      .chat-container {
+        border-radius: 15px;
+      }
+      .chat-messages {
+        min-height: 55vh;
+        padding: 15px;
+      }
+      .message-content {
+        max-width: 88%;
+      }
+      .chat-form {
+        align-items: stretch;
+      }
+      .send-button {
+        padding: 0 15px;
+      }
+    }
+  </style>
+</head>
+<body>
+<!-- =====================================
+     NAVBAR
+     ===================================== -->
+<header class="navbar">
+
+<a
+href=“index.html”
+class=“logo”
+
+<span class="logo-box">
+  DU
+</span>
+<span>
+  DumiduUddipana
+</span>
+  </a>
+  <nav id="navMenu">
+<a href="index.html">
+  Home
+</a>
+<a href="courses.html">
+  Courses
+</a>
+<a href="ebook.html">
+  eBook
+</a>
+<a href="faq.html">
+  FAQ
+</a>
+<a href="contact.html">
+  Contact
+</a>
+<a
+  href="login.html"
+  class="login-button"
+>
+  Login
+</a>
+  </nav>
+</header>
+<!-- =====================================
+     CHAT PAGE
+     ===================================== -->
+<main class="chat-page">
+  <div class="chat-container">
+<!-- HEADER -->
+<div class="chat-header">
+  <div class="chat-icon">
+    🤖
+  </div>
+  <div>
+    <h1>
+      ChatGPT
+    </h1>
+    <p>
+      DumiduUddipana AI Assistant
+    </p>
+  </div>
+</div>
+<!-- MESSAGES -->
+<div
+  id="chatMessages"
+  class="chat-messages"
+>
+  <div class="message ai">
+    <div class="message-content">
+      👋 Hi! I'm the DumiduUddipana AI Assistant.
+      Ask me anything about your courses,
+      AI, YouTube, content creation or digital skills.
+    </div>
+  </div>
+</div>
+<!-- INPUT -->
+<div class="chat-input-area">
+  <form
+    id="chatForm"
+    class="chat-form"
+  >
+    <textarea
+      id="chatInput"
+      class="chat-input"
+      placeholder="Message ChatGPT..."
+      autocomplete="off"
+      required
+    ></textarea>
+    <button
+      id="sendButton"
+      class="send-button"
+      type="submit"
+    >
+      Send
+    </button>
+  </form>
+  <div class="chat-note">
+    DumiduUddipana AI Assistant
+  </div>
+</div>
+  </div>
+</main>
+<!-- =====================================
+     FOOTER
+     ===================================== -->
+<footer>
+  <div class="copyright">
+    © 2026 DumiduUddipana. All Rights Reserved.
+  </div>
+</footer>
+<!-- =====================================
+     SUPABASE
+     ===================================== -->
+<script src="script.js"></script>
+<!-- =====================================
+     CHAT SYSTEM
+     ===================================== -->
+<script>
+document.addEventListener(
+  "DOMContentLoaded",
+  async function () {
+    /* ==============================
+       WAIT FOR SUPABASE
+       ============================== */
+    let attempts = 0;
+    while (
+      typeof supabaseClient === "undefined" ||
+      !supabaseClient
+    ) {
+      await new Promise(
+        resolve =>
+          setTimeout(resolve, 100)
+      );
+      attempts++;
+      if (attempts > 50) {
+        console.error(
+          "Supabase client not available."
+        );
+        return;
+      }
+    }
+    /* ==============================
+       LOGIN CHECK
+       ============================== */
+    try {
+      const {
+        data,
+        error
+      } =
+        await supabaseClient.auth.getUser();
+      if (
+        error ||
+        !data?.user
+      ) {
+        window.location.href =
+          "login.html";
+        return;
+      }
+    } catch (error) {
+      console.error(error);
+      window.location.href =
+        "login.html";
+      return;
+    }
+    /* ==============================
+       ELEMENTS
+       ============================== */
+    const form =
+      document.getElementById(
+        "chatForm"
+      );
+    const input =
+      document.getElementById(
+        "chatInput"
+      );
+    const messages =
+      document.getElementById(
+        "chatMessages"
+      );
+    const sendButton =
+      document.getElementById(
+        "sendButton"
+      );
+    /* ==============================
+       ADD MESSAGE
+       ============================== */
+    function addMessage(
+      text,
+      type
+    ) {
+      const message =
+        document.createElement(
+          "div"
+        );
+      message.className =
+        "message " + type;
+      const content =
+        document.createElement(
+          "div"
+        );
+      content.className =
+        "message-content";
+      content.textContent =
+        text;
+      message.appendChild(
+        content
+      );
+      messages.appendChild(
+        message
+      );
+      messages.scrollTop =
+        messages.scrollHeight;
+    }
+    /* ==============================
+       SEND MESSAGE
+       ============================== */
+    form.addEventListener(
+      "submit",
+      async function (event) {
+        event.preventDefault();
+        const question =
+          input.value.trim();
+        if (!question) {
+          return;
+        }
+        addMessage(
+          question,
+          "user"
+        );
+        input.value =
+          "";
+        sendButton.disabled =
+          true;
+        sendButton.textContent =
+          "Thinking...";
+        /*
+          AI BACKEND WILL BE CONNECTED
+          HERE IN THE NEXT STEP.
+        */
+        setTimeout(
+          function () {
+            addMessage(
+              "AI backend is not connected yet. We can connect your secure AI API in the next step.",
+              "ai"
+            );
+            sendButton.disabled =
+              false;
+            sendButton.textContent =
+              "Send";
+          },
+          700
+        );
+      }
+    );
+  }
+);
+</script>
+</body>
+</html>
