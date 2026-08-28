@@ -20,8 +20,7 @@ content=“DumiduUddipana Student Dashboard.”
   >
   <style>
     /* =====================================
-       DASHBOARD RESPONSIVE SYSTEM
-       MOBILE → TABLET → PC → TV
+       DASHBOARD CARDS
        ===================================== */
     .dashboard-main-cards {
       display: grid;
@@ -109,6 +108,7 @@ content=“DumiduUddipana Student Dashboard.”
     }
     /* =====================================
        MOBILE
+       ONE CARD PER ROW
        ===================================== */
     @media (max-width: 600px) {
       .dashboard {
@@ -127,6 +127,7 @@ content=“DumiduUddipana Student Dashboard.”
         margin-top: 25px;
       }
       .dashboard-main-card {
+        width: 100%;
         min-height: 160px;
         padding: 22px;
         border-radius: 18px;
@@ -259,7 +260,7 @@ type=“button”
 </button>
   </div>
   <!-- =====================================
-       MAIN DASHBOARD CARDS
+       DASHBOARD CARDS
        ===================================== -->
   <section
     class="dashboard-main-cards"
