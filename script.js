@@ -2,8 +2,7 @@
    DUMIDUUDDIPANA
    SUPABASE + AUTH + DASHBOARD
    + THUMBNAIL DOWNLOADER
-   + TITLE & DESCRIPTION COPY
-   + YOUTUBE DATA API
+   + YOUTUBE TITLE & DESCRIPTION
    ======================================== */
 
 
@@ -13,7 +12,6 @@
 
 const SUPABASE_URL =
   "https://ggukgsxjbrnkkdzukqka.supabase.co";
-
 
 const SUPABASE_KEY =
   "sb_publishable_7SzuHUW5E7SjmLVr3Ao7qg_xNCoQ5QK";
@@ -28,7 +26,7 @@ const WEBSITE_URL =
 
 
 /* ========================================
-   YOUTUBE SUPABASE EDGE FUNCTION
+   SUPABASE YOUTUBE EDGE FUNCTION
    ======================================== */
 
 const YOUTUBE_BACKEND_URL =
@@ -58,13 +56,11 @@ function startSupabase() {
 
   }
 
-
   supabaseClient =
     window.supabase.createClient(
       SUPABASE_URL,
       SUPABASE_KEY
     );
-
 
   setupAuthForms();
 
@@ -80,9 +76,7 @@ function toggleMenu() {
   const navMenu =
     document.getElementById("navMenu");
 
-
   if (!navMenu) return;
-
 
   navMenu.classList.toggle(
     "mobile-open"
@@ -102,13 +96,10 @@ document.addEventListener(
     const navMenu =
       document.getElementById("navMenu");
 
-
     if (!navMenu) return;
-
 
     const links =
       navMenu.querySelectorAll("a");
-
 
     links.forEach(function (link) {
 
@@ -140,7 +131,6 @@ function setupAuthForms() {
       "registerForm"
     );
 
-
   const loginForm =
     document.getElementById(
       "loginForm"
@@ -159,38 +149,31 @@ function setupAuthForms() {
 
         event.preventDefault();
 
-
         const name =
           document.getElementById(
             "name"
           )?.value.trim();
-
 
         const email =
           document.getElementById(
             "email"
           )?.value.trim();
 
-
         const password =
           document.getElementById(
             "password"
           )?.value;
-
 
         const confirmPassword =
           document.getElementById(
             "confirmPassword"
           )?.value;
 
-
         const message =
           document.getElementById(
             "registerMessage"
           );
 
-
-        /* CHECK FIELDS */
 
         if (
           !name ||
@@ -211,8 +194,6 @@ function setupAuthForms() {
         }
 
 
-        /* PASSWORD MATCH */
-
         if (
           password !==
           confirmPassword
@@ -229,8 +210,6 @@ function setupAuthForms() {
 
         }
 
-
-        /* PASSWORD LENGTH */
 
         if (
           password.length < 8
@@ -288,7 +267,6 @@ function setupAuthForms() {
 
             console.error(error);
 
-
             if (message) {
 
               message.textContent =
@@ -315,7 +293,6 @@ function setupAuthForms() {
         } catch (error) {
 
           console.error(error);
-
 
           if (message) {
 
@@ -344,18 +321,15 @@ function setupAuthForms() {
 
         event.preventDefault();
 
-
         const email =
           document.getElementById(
             "loginEmail"
           )?.value.trim();
 
-
         const password =
           document.getElementById(
             "loginPassword"
           )?.value;
-
 
         const message =
           document.getElementById(
@@ -407,7 +381,6 @@ function setupAuthForms() {
 
             console.error(error);
 
-
             if (message) {
 
               message.textContent =
@@ -441,7 +414,6 @@ function setupAuthForms() {
 
           console.error(error);
 
-
           if (message) {
 
             message.textContent =
@@ -469,7 +441,6 @@ async function setupDashboard() {
     document.getElementById(
       "userName"
     );
-
 
   const logoutButton =
     document.getElementById(
@@ -539,9 +510,9 @@ async function setupDashboard() {
     }
 
 
-    /* ====================================
+    /* ======================================
        LOGOUT
-       ==================================== */
+       ====================================== */
 
     if (logoutButton) {
 
@@ -551,7 +522,6 @@ async function setupDashboard() {
 
           logoutButton.disabled =
             true;
-
 
           logoutButton.textContent =
             "Logging out...";
@@ -570,14 +540,11 @@ async function setupDashboard() {
 
               console.error(error);
 
-
               logoutButton.disabled =
                 false;
 
-
               logoutButton.textContent =
                 "Logout";
-
 
               return;
 
@@ -593,10 +560,8 @@ async function setupDashboard() {
 
             console.error(error);
 
-
             logoutButton.disabled =
               false;
-
 
             logoutButton.textContent =
               "Logout";
@@ -607,6 +572,7 @@ async function setupDashboard() {
       );
 
     }
+
 
   } catch (error) {
 
@@ -631,14 +597,13 @@ function getYouTubeVideoId(url) {
     const parsedUrl =
       new URL(url);
 
-
     const hostname =
       parsedUrl.hostname.toLowerCase();
 
 
-    /* ==================================
+    /* ======================================
        youtube.com
-       ================================== */
+       ====================================== */
 
     if (
       hostname === "youtube.com" ||
@@ -652,9 +617,9 @@ function getYouTubeVideoId(url) {
     }
 
 
-    /* ==================================
+    /* ======================================
        youtu.be
-       ================================== */
+       ====================================== */
 
     if (
       hostname === "youtu.be"
@@ -667,13 +632,15 @@ function getYouTubeVideoId(url) {
     }
 
 
-    /* ==================================
+    /* ======================================
        youtube-nocookie.com
-       ================================== */
+       ====================================== */
 
     if (
-      hostname === "youtube-nocookie.com" ||
-      hostname === "www.youtube-nocookie.com"
+      hostname ===
+        "youtube-nocookie.com" ||
+      hostname ===
+        "www.youtube-nocookie.com"
     ) {
 
       const parts =
@@ -682,12 +649,15 @@ function getYouTubeVideoId(url) {
           .filter(Boolean);
 
 
-      return parts[parts.length - 1];
+      return parts[
+        parts.length - 1
+      ];
 
     }
 
 
     return null;
+
 
   } catch (error) {
 
@@ -782,10 +752,8 @@ function setupThumbnailDownloader() {
         message.textContent =
           "❌ Please enter a valid YouTube URL.";
 
-
         result.style.display =
           "none";
-
 
         return;
 
@@ -861,7 +829,8 @@ function setupThumbnailDownloader() {
 
 
 /* ========================================
-   YOUTUBE TITLE & DESCRIPTION
+   GET YOUTUBE TITLE + DESCRIPTION
+   FROM SUPABASE EDGE FUNCTION
    ======================================== */
 
 function setupTitleDescriptionCopy() {
@@ -918,23 +887,32 @@ function setupTitleDescriptionCopy() {
 
 
   /* ======================================
-     GET TITLE + DESCRIPTION
+     GET VIDEO INFORMATION
      ====================================== */
 
   form.addEventListener(
     "submit",
-    async function(event) {
+    async function (event) {
 
       event.preventDefault();
 
 
+      if (
+        !urlInput ||
+        !message ||
+        !result ||
+        !title ||
+        !description
+      ) {
+
+        return;
+
+      }
+
+
       const url =
-        urlInput?.value.trim();
+        urlInput.value.trim();
 
-
-      /* ==================================
-         CHECK URL
-         ================================== */
 
       const videoId =
         getYouTubeVideoId(url);
@@ -942,65 +920,23 @@ function setupTitleDescriptionCopy() {
 
       if (!videoId) {
 
-        if (message) {
-
-          message.textContent =
-            "❌ Please enter a valid YouTube URL.";
-
-        }
-
-
-        if (result) {
-
-          result.style.display =
-            "none";
-
-        }
-
-
-        return;
-
-      }
-
-
-      /* ==================================
-         CHECK EDGE FUNCTION
-         ================================== */
-
-      if (
-        !YOUTUBE_BACKEND_URL
-      ) {
-
-        if (message) {
-
-          message.textContent =
-            "❌ YouTube API service is not configured.";
-
-        }
-
-        return;
-
-      }
-
-
-      /* ==================================
-         LOADING
-         ================================== */
-
-      if (message) {
-
         message.textContent =
-          "⏳ Getting video information...";
-
-      }
-
-
-      if (result) {
+          "❌ Please enter a valid YouTube URL.";
 
         result.style.display =
           "none";
 
+        return;
+
       }
+
+
+      message.textContent =
+        "⏳ Getting video information...";
+
+
+      result.style.display =
+        "none";
 
 
       try {
@@ -1013,44 +949,41 @@ function setupTitleDescriptionCopy() {
           await fetch(
             YOUTUBE_BACKEND_URL,
             {
+              method: "POST",
 
-              method:
-                "POST",
+              headers: {
 
-              headers:
-                {
+                "Content-Type":
+                  "application/json",
 
-                  "Content-Type":
-                    "application/json",
+                "apikey":
+                  SUPABASE_KEY,
 
-                  "apikey":
-                    SUPABASE_KEY
+                "Authorization":
+                  "Bearer " +
+                  SUPABASE_KEY
 
-                },
+              },
 
-              body:
-                JSON.stringify({
+              body: JSON.stringify({
 
-                  url:
-                    url
+                url: url
 
-                })
+              })
 
             }
           );
 
 
-        /* ==================================
-           READ RESPONSE
-           ================================== */
-
         const data =
           await response.json();
 
 
-        /* ==================================
-           API ERROR
-           ================================== */
+        console.log(
+          "YouTube API response:",
+          data
+        );
+
 
         if (!response.ok) {
 
@@ -1062,76 +995,58 @@ function setupTitleDescriptionCopy() {
         }
 
 
-        /* ==================================
-           TITLE
-           ================================== */
+        if (!data.success) {
 
-        if (title) {
-
-          title.value =
-            data.title || "";
+          throw new Error(
+            data?.error ||
+            "Video information was not found."
+          );
 
         }
 
 
         /* ==================================
-           DESCRIPTION
+           SHOW TITLE
            ================================== */
 
-        if (description) {
-
-          description.value =
-            data.description || "";
-
-        }
+        title.value =
+          data.title || "";
 
 
         /* ==================================
-           SHOW RESULT
+           SHOW DESCRIPTION
            ================================== */
 
-        if (result) {
-
-          result.style.display =
-            "block";
-
-        }
+        description.value =
+          data.description || "";
 
 
-        if (message) {
+        result.style.display =
+          "block";
 
-          message.textContent =
-            "✅ Title & description loaded successfully!";
 
-        }
+        message.textContent =
+          "✅ Title & description loaded successfully!";
 
 
       } catch (error) {
 
         console.error(
-          "YouTube API Error:",
+          "YouTube information error:",
           error
         );
 
 
-        if (message) {
-
-          message.textContent =
-            "❌ " +
-            (
-              error.message ||
-              "Unable to get video information."
-            );
-
-        }
+        message.textContent =
+          "❌ " +
+          (
+            error.message ||
+            "Unable to get video information."
+          );
 
 
-        if (result) {
-
-          result.style.display =
-            "none";
-
-        }
+        result.style.display =
+          "none";
 
       }
 
@@ -1147,7 +1062,7 @@ function setupTitleDescriptionCopy() {
 
     copyTitleButton.addEventListener(
       "click",
-      async function() {
+      async function () {
 
         if (
           !title ||
@@ -1170,15 +1085,12 @@ function setupTitleDescriptionCopy() {
             "Copied ✓";
 
 
-          setTimeout(
-            function() {
+          setTimeout(function () {
 
-              copyTitleButton.textContent =
-                "📋 Copy Title";
+            copyTitleButton.textContent =
+              "📋 Copy Title";
 
-            },
-            1500
-          );
+          }, 1500);
 
 
         } catch (error) {
@@ -1204,7 +1116,7 @@ function setupTitleDescriptionCopy() {
 
     copyDescriptionButton.addEventListener(
       "click",
-      async function() {
+      async function () {
 
         if (
           !description ||
@@ -1227,15 +1139,12 @@ function setupTitleDescriptionCopy() {
             "Copied ✓";
 
 
-          setTimeout(
-            function() {
+          setTimeout(function () {
 
-              copyDescriptionButton.textContent =
-                "📋 Copy Description";
+            copyDescriptionButton.textContent =
+              "📋 Copy Description";
 
-            },
-            1500
-          );
+          }, 1500);
 
 
         } catch (error) {
@@ -1263,30 +1172,30 @@ window.addEventListener(
   "load",
   function () {
 
-    /* ====================================
+    /* ======================================
        START SUPABASE
-       ==================================== */
+       ====================================== */
 
     startSupabase();
 
 
-    /* ====================================
+    /* ======================================
        THUMBNAIL DOWNLOADER
-       ==================================== */
+       ====================================== */
 
     setupThumbnailDownloader();
 
 
-    /* ====================================
+    /* ======================================
        TITLE + DESCRIPTION
-       ==================================== */
+       ====================================== */
 
     setupTitleDescriptionCopy();
 
 
-    /* ====================================
+    /* ======================================
        DASHBOARD SECURITY
-       ==================================== */
+       ====================================== */
 
     setTimeout(
       setupDashboard,
