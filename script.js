@@ -4,7 +4,6 @@
    + MOBILE MENU
    + THUMBNAIL DOWNLOADER
    + YOUTUBE TITLE & DESCRIPTION
-   + AI TREND FINDER
    ======================================== */
 
 
@@ -1279,80 +1278,6 @@ function setupTitleDescriptionCopy() {
 
       }
     );
-
-  }
-
-}
-
-
-/* ========================================
-   AI TREND FINDER (DYNAMIC TOPICS)
-   ======================================== */
-
-async function generateNicheTrends() {
-
-  const nicheInput =
-    document.getElementById("userNicheInput")?.value.trim();
-
-  const topicsList =
-    document.getElementById("dynamicTopicsList");
-
-  const loadingText =
-    document.getElementById("loadingText");
-
-
-  if (!nicheInput) {
-
-    alert("Please enter a niche first!");
-
-    return;
-
-  }
-
-
-  if (!topicsList || !loadingText) return;
-
-
-  topicsList.innerHTML = "";
-
-  loadingText.style.display = "block";
-
-
-  try {
-
-    // මෙහිදී ඔබට පසුකාලීනව Make.com Webhook හෝ Supabase Edge Function එකක් සම්බන්ධ කළ හැක.
-    setTimeout(function () {
-
-      loadingText.style.display = "none";
-
-      const sampleTopics = [
-        `The Future and Impact of ${nicheInput} in 2026`,
-        `Top 5 Mistakes to Avoid in ${nicheInput}`,
-        `How AI is Transforming ${nicheInput} Industry`,
-        `Beginner's Guide to Mastering ${nicheInput} Fast`,
-        `Advanced Strategies for ${nicheInput} Professionals`,
-        `Top Tools and Resources for ${nicheInput} Success`,
-        `Case Study: Growing a ${nicheInput} Channel from Scratch`,
-        `Monetization Secrets for ${nicheInput} Creators`,
-        `Unexplored Opportunities in ${nicheInput} Today`,
-        `Expert Predictions for ${nicheInput} Next Year`
-      ];
-
-      topicsList.innerHTML =
-        sampleTopics
-          .map(function (topic) {
-            return `<li style="margin-bottom: 8px;">${topic}</li>`;
-          })
-          .join("");
-
-    }, 1000);
-
-
-  } catch (error) {
-
-    loadingText.style.display = "none";
-
-    alert("Error fetching trending topics. Please try again.");
 
   }
 
