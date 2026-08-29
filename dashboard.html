@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+  <meta charset="UTF-8">
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  >
+
+  <meta
+    name="description"
+    content="DumiduUddipana Student Dashboard."
+  >
+
+  <title>Dashboard | DumiduUddipana</title>
+
+  <link
+    rel="stylesheet"
+    href="style.css"
+  >
+
+</head>
+
+<body>
+
+  <!-- =====================================
+       HEADER
+       ===================================== -->
+
+  <header class="navbar">
+
+    <a
+      href="index.html"
+      class="logo"
+    >
+
+      <span class="logo-box">
+        DU
+      </span>
+
+      <span>
+        DumiduUddipana
+      </span>
+
+    </a>
+
+
+    <nav id="navMenu">
+
+      <a href="index.html">
+        Home
+      </a>
+
+      <a href="courses.html">
+        Courses
+      </a>
+
+      <a href="ebook.html">
+        Free eBook
+      </a>
+
+      <a href="contact.html">
+        Contact
+      </a>
+
+    </nav>
+
+
+    <button
+      class="menu-button"
+      id="menuButton"
+      type="button"
+      aria-label="Open menu"
+      onclick="toggleMenu()"
+    >
+      ☰
+    </button>
+
+  </header>
+
+
+  <!-- =====================================
+       DASHBOARD
+       ===================================== -->
+
+  <main class="dashboard">
+
+
+    <!-- ===================================
+         DASHBOARD HEADER
+         =================================== -->
+
+    <div class="dashboard-header">
+
+      <div>
+
+        <div class="eyebrow">
+          STUDENT DASHBOARD
+        </div>
+
+        <h1>
+          Welcome,
+          <span id="userName">
+            Student
+          </span>
+          👋
+        </h1>
+
+        <p>
+          Continue your learning journey.
+        </p>
+
+      </div>
+
+
+      <button
+        id="logoutButton"
+        class="btn primary"
+        type="button"
+      >
+        Logout
+      </button>
+
+    </div>
+
+
+
+    <!-- =====================================
+         DASHBOARD CARDS
+         ===================================== -->
+
+    <section class="dashboard-main-cards">
+
+
+      <!-- =================================
+           COURSES
+           ================================= -->
+
+      <a
+        href="courses.html"
+        class="dashboard-main-card"
+      >
+
+        <div>
+
+          <div class="dashboard-card-icon">
+            📚
+          </div>
+
+          <h3>
+            Courses
+          </h3>
+
+          <p>
+            Explore courses and continue
+            your learning journey.
+          </p>
+
+        </div>
+
+        <div class="dashboard-card-arrow">
+          Explore Courses →
+        </div>
+
+      </a>
+
+
+
+      <!-- =================================
+           LESSONS COMPLETED
+           ================================= -->
+
+      <a
+        href="courses.html"
+        class="dashboard-main-card"
+      >
+
+        <div>
+
+          <div class="dashboard-card-icon">
+            🎬
+          </div>
+
+          <h3>
+            Lessons Completed
+          </h3>
+
+          <p>
+            Track your completed lessons
+            and learning progress.
+          </p>
+
+        </div>
+
+        <div class="dashboard-card-arrow">
+          View Progress →
+        </div>
+
+      </a>
+
+
+
+      <!-- =================================
+           CERTIFICATES
+           ================================= -->
+
+      <a
+        href="certificates.html"
+        class="dashboard-main-card"
+      >
+
+        <div>
+
+          <div class="dashboard-card-icon">
+            🏆
+          </div>
+
+          <h3>
+            Certificates
+          </h3>
+
+          <p>
+            View your certificates and
+            learning achievements.
+          </p>
+
+        </div>
+
+        <div class="dashboard-card-arrow">
+          View Certificates →
+        </div>
+
+      </a>
+
+
+
+      <!-- =================================
+           CHATGPT
+           ================================= -->
+
+      <a
+        href="chatgpt.html"
+        class="dashboard-main-card"
+      >
+
+        <div>
+
+          <div class="dashboard-card-icon">
+            🤖
+          </div>
+
+          <h3>
+            ChatGPT
+          </h3>
+
+          <p>
+            Ask questions and get AI
+            assistance while learning.
+          </p>
+
+        </div>
+
+        <div class="dashboard-card-arrow">
+          Start Chat →
+        </div>
+
+      </a>
+
+
+
+      <!-- =================================
+           THUMBNAIL DOWNLOADER
+           ================================= -->
+
+      <a
+        href="thumbnail.html"
+        class="dashboard-main-card"
+      >
+
+        <div>
+
+          <div class="dashboard-card-icon">
+            🖼️
+          </div>
+
+          <h3>
+            Thumbnail Downloader
+          </h3>
+
+          <p>
+            Get YouTube thumbnails quickly
+            from video URLs.
+          </p>
+
+        </div>
+
+        <div class="dashboard-card-arrow">
+          Open Tool →
+        </div>
+
+      </a>
+
+
+
+      <!-- =================================
+           TITLE & DESCRIPTION
+           ================================= -->
+
+      <a
+        href="youtube-info.html"
+        class="dashboard-main-card"
+      >
+
+        <div>
+
+          <div class="dashboard-card-icon">
+            ✍️
+          </div>
+
+          <h3>
+            Title &amp; Description Copy
+          </h3>
+
+          <p>
+            Get a YouTube video's title
+            and description.
+          </p>
+
+        </div>
+
+        <div class="dashboard-card-arrow">
+          Open Tool →
+        </div>
+
+      </a>
+
+
+    </section>
+
+  </main>
+
+
+
+  <!-- =====================================
+       SUPABASE
+       ===================================== -->
+
+  <script
+    src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"
+  ></script>
+
+
+  <!-- =====================================
+       MAIN SCRIPT
+       ===================================== -->
+
+  <script src="script.js"></script>
+
+
+</body>
+</html>
