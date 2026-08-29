@@ -1,0 +1,1313 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+
+  <meta name="viewport"
+        content="width=device-width, initial-scale=1.0">
+
+  <meta name="description"
+        content="DumiduUddipana Student Dashboard">
+
+  <title>Dashboard | DumiduUddipana</title>
+
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<!-- =========================================
+     HEADER
+     ========================================= -->
+
+<header class="navbar">
+
+  <a href="index.html" class="logo">
+
+    <span class="logo-box">DU</span>
+
+    <span class="logo-name">
+      DumiduUddipana
+    </span>
+
+  </a>
+
+  <button
+    class="menu-button"
+    type="button"
+    onclick="toggleMenu()"
+    aria-label="Open menu">
+
+    ☰
+
+  </button>
+
+  <nav id="navMenu">
+
+    <a href="index.html">
+      Home
+    </a>
+
+    <a href="dashboard.html">
+      Dashboard
+    </a>
+
+    <a href="ebook.html">
+      Free eBook
+    </a>
+
+    <a href="faq.html">
+      FAQ
+    </a>
+
+    <a href="contact.html">
+      Contact
+    </a>
+
+    <button
+      type="button"
+      class="menu-logout-button"
+      id="menuLogoutButton">
+
+      Logout
+
+    </button>
+
+  </nav>
+
+</header>
+
+
+<!-- =========================================
+     DASHBOARD
+     ========================================= -->
+
+<main class="dashboard">
+
+  <!-- WELCOME -->
+
+  <section class="dashboard-welcome">
+
+    <div class="eyebrow">
+      STUDENT DASHBOARD
+    </div>
+
+    <h1>
+      Welcome,
+      <span id="userName">Student</span>
+      👋
+    </h1>
+
+    <p>
+      Choose what you want to learn today.
+    </p>
+
+  </section>
+
+
+  <!-- =======================================
+       MAIN 9 CARDS
+       ======================================= -->
+
+  <section class="dashboard-main-cards">
+
+
+    <!-- 1. AI VIDEO -->
+
+    <button
+      type="button"
+      class="dashboard-main-card protected-card"
+      data-section="video">
+
+      <div>
+
+        <div class="dashboard-card-icon">
+          🎬
+        </div>
+
+        <h3>
+          AI VIDEO CREATION
+        </h3>
+
+        <div class="dashboard-card-subtitle">
+          AI Video Prompt Mastery
+        </div>
+
+        <p>
+          Learn how to create better prompts
+          for AI video tools.
+        </p>
+
+      </div>
+
+      <div class="dashboard-card-arrow">
+        Start Learning →
+      </div>
+
+    </button>
+
+
+    <!-- 2. AI IMAGE -->
+
+    <button
+      type="button"
+      class="dashboard-main-card protected-card"
+      data-section="image">
+
+      <div>
+
+        <div class="dashboard-card-icon">
+          🖼️
+        </div>
+
+        <h3>
+          AI IMAGE CREATION
+        </h3>
+
+        <div class="dashboard-card-subtitle">
+          AI Image Prompt Mastery
+        </div>
+
+        <p>
+          Learn how to create better prompts
+          for AI image tools.
+        </p>
+
+      </div>
+
+      <div class="dashboard-card-arrow">
+        Start Learning →
+      </div>
+
+    </button>
+
+
+    <!-- 3. OTHER PROMPTS -->
+
+    <button
+      type="button"
+      class="dashboard-main-card protected-card"
+      data-section="other">
+
+      <div>
+
+        <div class="dashboard-card-icon">
+          ✨
+        </div>
+
+        <h3>
+          OTHER PROMPTS
+        </h3>
+
+        <div class="dashboard-card-subtitle">
+          Useful AI Prompts & Resources
+        </div>
+
+        <p>
+          Explore useful prompts and
+          creator resources.
+        </p>
+
+      </div>
+
+      <div class="dashboard-card-arrow">
+        Explore →
+      </div>
+
+    </button>
+
+
+    <!-- 4. THUMBNAIL -->
+
+    <button
+      type="button"
+      class="dashboard-main-card protected-card"
+      data-section="thumbnail">
+
+      <div>
+
+        <div class="dashboard-card-icon">
+          🖼️
+        </div>
+
+        <h3>
+          THUMBNAIL DOWNLOADER
+        </h3>
+
+        <div class="dashboard-card-subtitle">
+          YouTube Thumbnail Tool
+        </div>
+
+        <p>
+          Get YouTube thumbnails quickly
+          from video URLs.
+        </p>
+
+      </div>
+
+      <div class="dashboard-card-arrow">
+        Open Tool →
+      </div>
+
+    </button>
+
+
+    <!-- 5. TITLE DESCRIPTION -->
+
+    <button
+      type="button"
+      class="dashboard-main-card protected-card"
+      data-section="youtube-info">
+
+      <div>
+
+        <div class="dashboard-card-icon">
+          📝
+        </div>
+
+        <h3>
+          TITLE & DESCRIPTION COPY
+        </h3>
+
+        <div class="dashboard-card-subtitle">
+          YouTube Information Tool
+        </div>
+
+        <p>
+          Get useful YouTube title and
+          description information.
+        </p>
+
+      </div>
+
+      <div class="dashboard-card-arrow">
+        Open Tool →
+      </div>
+
+    </button>
+
+
+    <!-- 6. CHATGPT -->
+
+    <button
+      type="button"
+      class="dashboard-main-card protected-card"
+      data-section="chatgpt">
+
+      <div>
+
+        <div class="dashboard-card-icon">
+          🤖
+        </div>
+
+        <h3>
+          CHATGPT
+        </h3>
+
+        <div class="dashboard-card-subtitle">
+          AI Learning Assistant
+        </div>
+
+        <p>
+          Use AI assistance while learning
+          and creating content.
+        </p>
+
+      </div>
+
+      <div class="dashboard-card-arrow">
+        Open Chat →
+      </div>
+
+    </button>
+
+
+    <!-- 7. GENERATOR -->
+
+    <button
+      type="button"
+      class="dashboard-main-card protected-card"
+      data-section="generator">
+
+      <div>
+
+        <div class="dashboard-card-icon">
+          📊
+        </div>
+
+        <h3>
+          TITLE / DESCRIPTION / HASHTAG
+        </h3>
+
+        <div class="dashboard-card-subtitle">
+          YouTube Content Generator
+        </div>
+
+        <p>
+          Generate useful titles,
+          descriptions and hashtags.
+        </p>
+
+      </div>
+
+      <div class="dashboard-card-arrow">
+        Open Generator →
+      </div>
+
+    </button>
+
+
+    <!-- 8. WATCH TIME -->
+
+    <button
+      type="button"
+      class="dashboard-main-card protected-card"
+      data-section="watchtime">
+
+      <div>
+
+        <div class="dashboard-card-icon">
+          🔢
+        </div>
+
+        <h3>
+          YOUTUBE WATCH TIME
+        </h3>
+
+        <div class="dashboard-card-subtitle">
+          Watch Time Calculator
+        </div>
+
+        <p>
+          Calculate YouTube watch time
+          easily.
+        </p>
+
+      </div>
+
+      <div class="dashboard-card-arrow">
+        Calculate →
+      </div>
+
+    </button>
+
+
+    <!-- 9. TRENDING -->
+
+    <button
+      type="button"
+      class="dashboard-main-card protected-card"
+      data-section="trending">
+
+      <div>
+
+        <div class="dashboard-card-icon">
+          🔥
+        </div>
+
+        <h3>
+          TRENDING TOPICS
+        </h3>
+
+        <div class="dashboard-card-subtitle">
+          YouTube Content Ideas
+        </div>
+
+        <p>
+          Discover useful topics and
+          content ideas.
+        </p>
+
+      </div>
+
+      <div class="dashboard-card-arrow">
+        Explore Trends →
+      </div>
+
+    </button>
+
+
+  </section>
+
+
+  <!-- =======================================
+       CONTENT AREA
+       ======================================= -->
+
+  <section
+    id="dashboardContent"
+    class="dashboard-content"
+    hidden>
+
+
+    <!-- =====================================
+         BACK BUTTON
+         ===================================== -->
+
+    <button
+      type="button"
+      class="content-back"
+      onclick="closeDashboardContent()">
+
+      ← Back to Dashboard
+
+    </button>
+
+
+    <!-- =====================================
+         AI VIDEO CREATION
+         ===================================== -->
+
+    <div
+      id="section-video"
+      class="dashboard-section-content"
+      hidden>
+
+      <div class="content-header">
+
+        <div class="content-icon">
+          🎬
+        </div>
+
+        <div>
+
+          <div class="eyebrow">
+            AI VIDEO CREATION
+          </div>
+
+          <h2>
+            AI Video Prompt Mastery
+          </h2>
+
+          <p>
+            Learn how to create better prompts
+            for AI video tools.
+          </p>
+
+        </div>
+
+      </div>
+
+
+      <!-- LESSON 01 -->
+
+      <article class="lesson-card">
+
+        <div class="lesson-number">
+          LESSON 01
+        </div>
+
+        <h3 class="lesson-title">
+          AI Video Creation Basics
+        </h3>
+
+
+        <!-- YOUTUBE VIDEO -->
+
+        <div class="lesson-video">
+
+          <iframe
+            src="https://www.youtube.com/embed/YOUR_VIDEO_ID"
+            title="AI Video Creation Basics"
+            frameborder="0"
+            allowfullscreen>
+          </iframe>
+
+        </div>
+
+
+        <!-- DESCRIPTION -->
+
+        <div class="lesson-description">
+
+          <h4>
+            Video Description
+          </h4>
+
+          <p id="videoDescription1">
+            මෙතන Lesson 01 එකට අදාළ
+            YouTube video description එක
+            දාන්න.
+          </p>
+
+          <button
+            type="button"
+            class="copy-description"
+            onclick="copyDescription('videoDescription1', this)">
+
+            📋 Copy Description
+
+          </button>
+
+        </div>
+
+      </article>
+
+
+      <!-- LESSON 02 -->
+
+      <article class="lesson-card">
+
+        <div class="lesson-number">
+          LESSON 02
+        </div>
+
+        <h3 class="lesson-title">
+          AI Video Prompt Writing
+        </h3>
+
+        <div class="lesson-video">
+
+          <iframe
+            src="https://www.youtube.com/embed/YOUR_VIDEO_ID"
+            title="AI Video Prompt Writing"
+            frameborder="0"
+            allowfullscreen>
+          </iframe>
+
+        </div>
+
+        <div class="lesson-description">
+
+          <h4>
+            Video Description
+          </h4>
+
+          <p id="videoDescription2">
+            මෙතන Lesson 02 එකට අදාළ
+            description එක දාන්න.
+          </p>
+
+          <button
+            type="button"
+            class="copy-description"
+            onclick="copyDescription('videoDescription2', this)">
+
+            📋 Copy Description
+
+          </button>
+
+        </div>
+
+      </article>
+
+
+      <!-- LESSON 03 -->
+
+      <article class="lesson-card">
+
+        <div class="lesson-number">
+          LESSON 03
+        </div>
+
+        <h3 class="lesson-title">
+          Creating Better AI Videos
+        </h3>
+
+        <div class="lesson-video">
+
+          <iframe
+            src="https://www.youtube.com/embed/YOUR_VIDEO_ID"
+            title="Creating Better AI Videos"
+            frameborder="0"
+            allowfullscreen>
+          </iframe>
+
+        </div>
+
+        <div class="lesson-description">
+
+          <h4>
+            Video Description
+          </h4>
+
+          <p id="videoDescription3">
+            මෙතන Lesson 03 එකට අදාළ
+            description එක දාන්න.
+          </p>
+
+          <button
+            type="button"
+            class="copy-description"
+            onclick="copyDescription('videoDescription3', this)">
+
+            📋 Copy Description
+
+          </button>
+
+        </div>
+
+      </article>
+
+    </div>
+
+
+    <!-- =====================================
+         AI IMAGE CREATION
+         ===================================== -->
+
+    <div
+      id="section-image"
+      class="dashboard-section-content"
+      hidden>
+
+      <div class="content-header">
+
+        <div class="content-icon">
+          🖼️
+        </div>
+
+        <div>
+
+          <div class="eyebrow">
+            AI IMAGE CREATION
+          </div>
+
+          <h2>
+            AI Image Prompt Mastery
+          </h2>
+
+          <p>
+            Learn how to create better prompts
+            for AI image tools.
+          </p>
+
+        </div>
+
+      </div>
+
+
+      <article class="lesson-card">
+
+        <div class="lesson-number">
+          LESSON 01
+        </div>
+
+        <h3 class="lesson-title">
+          AI Image Creation Basics
+        </h3>
+
+        <div class="lesson-video">
+
+          <iframe
+            src="https://www.youtube.com/embed/YOUR_VIDEO_ID"
+            title="AI Image Creation Basics"
+            frameborder="0"
+            allowfullscreen>
+          </iframe>
+
+        </div>
+
+        <div class="lesson-description">
+
+          <h4>
+            Video Description
+          </h4>
+
+          <p id="imageDescription1">
+            මෙතන AI Image Creation
+            Lesson 01 description එක දාන්න.
+          </p>
+
+          <button
+            type="button"
+            class="copy-description"
+            onclick="copyDescription('imageDescription1', this)">
+
+            📋 Copy Description
+
+          </button>
+
+        </div>
+
+      </article>
+
+    </div>
+
+
+    <!-- =====================================
+         OTHER PROMPTS
+         ===================================== -->
+
+    <div
+      id="section-other"
+      class="dashboard-section-content"
+      hidden>
+
+      <div class="content-header">
+
+        <div class="content-icon">
+          ✨
+        </div>
+
+        <div>
+
+          <div class="eyebrow">
+            OTHER PROMPTS
+          </div>
+
+          <h2>
+            Other Prompts
+          </h2>
+
+          <p>
+            Useful prompts and creator resources.
+          </p>
+
+        </div>
+
+      </div>
+
+
+      <article class="lesson-card">
+
+        <div class="lesson-number">
+          RESOURCE 01
+        </div>
+
+        <h3 class="lesson-title">
+          Useful AI Prompt
+        </h3>
+
+        <div class="lesson-video">
+
+          <iframe
+            src="https://www.youtube.com/embed/YOUR_VIDEO_ID"
+            title="Useful AI Prompt"
+            frameborder="0"
+            allowfullscreen>
+          </iframe>
+
+        </div>
+
+        <div class="lesson-description">
+
+          <h4>
+            Prompt / Description
+          </h4>
+
+          <p id="otherDescription1">
+            මෙතන Other Prompts එකට
+            අදාළ content එක දාන්න.
+          </p>
+
+          <button
+            type="button"
+            class="copy-description"
+            onclick="copyDescription('otherDescription1', this)">
+
+            📋 Copy
+
+          </button>
+
+        </div>
+
+      </article>
+
+    </div>
+
+
+    <!-- =====================================
+         OTHER TOOLS
+         ===================================== -->
+
+    <div
+      id="section-thumbnail"
+      class="dashboard-section-content"
+      hidden>
+
+      <div class="content-header">
+
+        <div class="content-icon">
+          🖼️
+        </div>
+
+        <div>
+
+          <div class="eyebrow">
+            CREATOR TOOL
+          </div>
+
+          <h2>
+            Thumbnail Downloader
+          </h2>
+
+          <p>
+            Download YouTube thumbnails.
+          </p>
+
+        </div>
+
+      </div>
+
+      <a
+        href="thumbnail.html"
+        class="tool-open-button">
+
+        Open Thumbnail Downloader →
+
+      </a>
+
+    </div>
+
+
+    <div
+      id="section-youtube-info"
+      class="dashboard-section-content"
+      hidden>
+
+      <div class="content-header">
+
+        <div class="content-icon">
+          📝
+        </div>
+
+        <div>
+
+          <div class="eyebrow">
+            CREATOR TOOL
+          </div>
+
+          <h2>
+            Title & Description Copy
+          </h2>
+
+          <p>
+            Get useful YouTube information.
+          </p>
+
+        </div>
+
+      </div>
+
+      <a
+        href="youtube-info.html"
+        class="tool-open-button">
+
+        Open Tool →
+
+      </a>
+
+    </div>
+
+
+    <div
+      id="section-chatgpt"
+      class="dashboard-section-content"
+      hidden>
+
+      <div class="content-header">
+
+        <div class="content-icon">
+          🤖
+        </div>
+
+        <div>
+
+          <div class="eyebrow">
+            AI ASSISTANT
+          </div>
+
+          <h2>
+            ChatGPT
+          </h2>
+
+          <p>
+            AI assistance for learning and
+            content creation.
+          </p>
+
+        </div>
+
+      </div>
+
+      <a
+        href="chatgpt.html"
+        class="tool-open-button">
+
+        Open ChatGPT →
+
+      </a>
+
+    </div>
+
+
+    <div
+      id="section-generator"
+      class="dashboard-section-content"
+      hidden>
+
+      <div class="content-header">
+
+        <div class="content-icon">
+          📊
+        </div>
+
+        <div>
+
+          <div class="eyebrow">
+            YOUTUBE TOOL
+          </div>
+
+          <h2>
+            Title / Description / Hashtag Generator
+          </h2>
+
+          <p>
+            Generate content ideas for YouTube.
+          </p>
+
+        </div>
+
+      </div>
+
+      <div class="coming-soon">
+        Generator coming soon.
+      </div>
+
+    </div>
+
+
+    <div
+      id="section-watchtime"
+      class="dashboard-section-content"
+      hidden>
+
+      <div class="content-header">
+
+        <div class="content-icon">
+          🔢
+        </div>
+
+        <div>
+
+          <div class="eyebrow">
+            YOUTUBE TOOL
+          </div>
+
+          <h2>
+            YouTube Watch Time Calculator
+          </h2>
+
+          <p>
+            Calculate your estimated watch time.
+          </p>
+
+        </div>
+
+      </div>
+
+      <div class="coming-soon">
+        Watch time calculator coming soon.
+      </div>
+
+    </div>
+
+
+    <div
+      id="section-trending"
+      class="dashboard-section-content"
+      hidden>
+
+      <div class="content-header">
+
+        <div class="content-icon">
+          🔥
+        </div>
+
+        <div>
+
+          <div class="eyebrow">
+            TRENDING
+          </div>
+
+          <h2>
+            Trending Topics
+          </h2>
+
+          <p>
+            Discover topics for your next
+            YouTube video.
+          </p>
+
+        </div>
+
+      </div>
+
+      <div class="coming-soon">
+        Trending topics coming soon.
+      </div>
+
+    </div>
+
+
+  </section>
+
+</main>
+
+
+<!-- =========================================
+     LOGIN MODAL
+     ========================================= -->
+
+<div
+  id="loginModal"
+  class="login-modal">
+
+  <div class="login-modal-box">
+
+    <button
+      type="button"
+      class="modal-close"
+      id="modalClose">
+
+      ×
+
+    </button>
+
+    <div class="modal-icon">
+      🔐
+    </div>
+
+    <h2>
+      Login Required
+    </h2>
+
+    <p>
+      Please login or create an account
+      to access this section.
+    </p>
+
+    <div class="modal-buttons">
+
+      <a
+        href="login.html"
+        class="btn primary">
+
+        Login
+
+      </a>
+
+      <a
+        href="register.html"
+        class="btn secondary">
+
+        Register
+
+      </a>
+
+    </div>
+
+  </div>
+
+</div>
+
+
+<!-- =========================================
+     SUPABASE
+     ========================================= -->
+
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+
+<script src="script.js"></script>
+
+
+<!-- =========================================
+     DASHBOARD SCRIPT
+     ========================================= -->
+
+<script>
+
+function openDashboardContent(section) {
+
+  const content =
+    document.getElementById("dashboardContent");
+
+  if (!content) return;
+
+  const sections =
+    document.querySelectorAll(
+      ".dashboard-section-content"
+    );
+
+  sections.forEach(function(item) {
+
+    item.hidden = true;
+
+  });
+
+  const selected =
+    document.getElementById(
+      "section-" + section
+    );
+
+  if (!selected) return;
+
+  selected.hidden = false;
+
+  content.hidden = false;
+
+  content.scrollIntoView({
+    behavior: "smooth",
+    block: "start"
+  });
+
+}
+
+
+function closeDashboardContent() {
+
+  const content =
+    document.getElementById("dashboardContent");
+
+  if (!content) return;
+
+  content.hidden = true;
+
+  window.scrollTo({
+    top: 0,
+    behavior: "smooth"
+  });
+
+}
+
+
+function copyDescription(
+  elementId,
+  button
+) {
+
+  const element =
+    document.getElementById(elementId);
+
+  if (!element) return;
+
+  const text =
+    element.innerText;
+
+  navigator.clipboard.writeText(text)
+    .then(function() {
+
+      const oldText =
+        button.innerText;
+
+      button.innerText =
+        "✓ Copied!";
+
+      setTimeout(function() {
+
+        button.innerText =
+          oldText;
+
+      }, 1500);
+
+    })
+    .catch(function() {
+
+      alert(
+        "Unable to copy. Please copy manually."
+      );
+
+    });
+
+}
+
+
+/* =========================================
+   DASHBOARD CARD CLICK
+   ========================================= */
+
+document
+  .querySelectorAll(".dashboard-main-card")
+  .forEach(function(card) {
+
+    card.addEventListener(
+      "click",
+      async function() {
+
+        const section =
+          card.dataset.section;
+
+        if (!section) return;
+
+        /*
+         * Check login before opening.
+         */
+
+        if (
+          typeof supabaseClient !==
+          "undefined" &&
+          supabaseClient
+        ) {
+
+          const {
+            data
+          } =
+            await supabaseClient.auth.getUser();
+
+          if (!data?.user) {
+
+            const modal =
+              document.getElementById(
+                "loginModal"
+              );
+
+            if (modal) {
+
+              modal.classList.add(
+                "show"
+              );
+
+            }
+
+            return;
+
+          }
+
+        }
+
+        openDashboardContent(
+          section
+        );
+
+      }
+    );
+
+  });
+
+
+/* =========================================
+   MODAL CLOSE
+   ========================================= */
+
+const modalClose =
+  document.getElementById(
+    "modalClose"
+  );
+
+const loginModal =
+  document.getElementById(
+    "loginModal"
+  );
+
+
+if (modalClose && loginModal) {
+
+  modalClose.addEventListener(
+    "click",
+    function() {
+
+      loginModal.classList.remove(
+        "show"
+      );
+
+    }
+  );
+
+}
+
+</script>
+
+</body>
+</html>
