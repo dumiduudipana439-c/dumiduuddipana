@@ -1,0 +1,1570 @@
+/* =========================================================
+   DUMIDUUDDIPANA
+   COMPLETE RESPONSIVE STYLE.CSS
+   Mobile + Tablet + Desktop
+   ========================================================= */
+
+
+/* =========================================================
+   1. RESET
+   ========================================================= */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family:
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    Roboto,
+    Helvetica,
+    Arial,
+    sans-serif;
+
+  background: #f6f8fc;
+  color: #111827;
+  line-height: 1.6;
+
+  min-height: 100vh;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button,
+input,
+textarea,
+select {
+  font: inherit;
+}
+
+button {
+  cursor: pointer;
+}
+
+
+/* =========================================================
+   2. GLOBAL
+   ========================================================= */
+
+:root {
+  --primary: #635bff;
+  --primary-dark: #4f46e5;
+
+  --dark: #111827;
+  --dark-2: #1f2937;
+
+  --text: #111827;
+  --muted: #667085;
+
+  --white: #ffffff;
+  --background: #f6f8fc;
+
+  --border: #e5e7eb;
+
+  --success: #16a34a;
+  --danger: #dc2626;
+
+  --radius-sm: 10px;
+  --radius-md: 16px;
+  --radius-lg: 22px;
+  --radius-xl: 28px;
+
+  --shadow-sm:
+    0 4px 14px rgba(15, 23, 42, 0.06);
+
+  --shadow-md:
+    0 12px 35px rgba(15, 23, 42, 0.08);
+
+  --shadow-lg:
+    0 25px 60px rgba(15, 23, 42, 0.12);
+
+  --container: 1200px;
+}
+
+.container {
+  width: min(
+    calc(100% - 40px),
+    var(--container)
+  );
+
+  margin: 0 auto;
+}
+
+
+/* =========================================================
+   3. NAVBAR
+   ========================================================= */
+
+.navbar {
+  width: 100%;
+  height: 82px;
+
+  background: rgba(255, 255, 255, 0.96);
+
+  border-bottom: 1px solid var(--border);
+
+  display: flex;
+  align-items: center;
+
+  padding: 0 5%;
+
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+}
+
+
+/* LOGO */
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 13px;
+
+  font-weight: 800;
+
+  white-space: nowrap;
+}
+
+.logo-box {
+  width: 48px;
+  height: 48px;
+
+  border-radius: 14px;
+
+  background:
+    linear-gradient(
+      145deg,
+      #172033,
+      #283650
+    );
+
+  color: white;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  font-size: 16px;
+  font-weight: 900;
+
+  box-shadow:
+    0 10px 25px rgba(17, 24, 39, 0.15);
+}
+
+.logo-name {
+  font-size: 19px;
+  color: var(--dark);
+  letter-spacing: -0.4px;
+}
+
+
+/* NAV */
+
+.navbar nav {
+  margin-left: auto;
+
+  display: flex;
+  align-items: center;
+  gap: 7px;
+}
+
+.navbar nav a {
+  padding: 10px 15px;
+
+  color: #475467;
+
+  font-size: 14px;
+  font-weight: 650;
+
+  border-radius: 10px;
+
+  transition:
+    background 0.2s ease,
+    color 0.2s ease,
+    transform 0.2s ease;
+}
+
+.navbar nav a:hover {
+  color: var(--primary);
+  background: #f1f2ff;
+}
+
+
+/* LOGIN */
+
+.nav-login {
+  color: var(--primary) !important;
+}
+
+
+/* REGISTER */
+
+.nav-register {
+  background: var(--primary);
+  color: white !important;
+
+  padding: 10px 17px !important;
+
+  box-shadow:
+    0 7px 18px rgba(99, 91, 255, 0.22);
+}
+
+.nav-register:hover {
+  background: var(--primary-dark) !important;
+  color: white !important;
+}
+
+
+/* DASHBOARD NAV */
+
+.nav-dashboard {
+  color: var(--primary) !important;
+}
+
+
+/* LOGOUT */
+
+.nav-logout,
+.menu-logout-button {
+  border: 0;
+
+  background: transparent;
+
+  color: #dc2626;
+
+  padding: 10px 15px;
+
+  font-size: 14px;
+  font-weight: 650;
+
+  border-radius: 10px;
+
+  transition: 0.2s ease;
+}
+
+.nav-logout:hover,
+.menu-logout-button:hover {
+  background: #fef2f2;
+}
+
+
+/* MOBILE MENU BUTTON */
+
+.menu-button {
+  display: none;
+
+  margin-left: auto;
+
+  width: 52px;
+  height: 52px;
+
+  border: 0;
+
+  border-radius: 16px;
+
+  background: #f2f4f7;
+
+  color: #172033;
+
+  font-size: 27px;
+
+  align-items: center;
+  justify-content: center;
+}
+
+
+/* =========================================================
+   4. HERO
+   ========================================================= */
+
+.hero {
+  width: min(
+    calc(100% - 40px),
+    1200px
+  );
+
+  min-height: 650px;
+
+  margin: 0 auto;
+
+  display: grid;
+
+  grid-template-columns:
+    1.05fr
+    0.95fr;
+
+  align-items: center;
+
+  gap: 70px;
+
+  padding: 80px 0;
+}
+
+
+/* HERO CONTENT */
+
+.hero-content {
+  max-width: 650px;
+}
+
+.eyebrow {
+  color: var(--primary);
+
+  font-size: 13px;
+
+  font-weight: 900;
+
+  letter-spacing: 4px;
+
+  margin-bottom: 18px;
+}
+
+.hero h1 {
+  font-size: clamp(
+    48px,
+    6vw,
+    78px
+  );
+
+  line-height: 1.02;
+
+  letter-spacing: -4px;
+
+  font-weight: 900;
+
+  color: #111827;
+
+  margin-bottom: 25px;
+}
+
+.hero h1 span {
+  color: var(--primary);
+}
+
+.hero p {
+  max-width: 610px;
+
+  font-size: 19px;
+
+  line-height: 1.75;
+
+  color: var(--muted);
+
+  margin-bottom: 32px;
+}
+
+
+/* HERO BUTTONS */
+
+.hero-buttons {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+
+/* BUTTON */
+
+.btn {
+  display: inline-flex;
+
+  align-items: center;
+  justify-content: center;
+
+  min-height: 48px;
+
+  padding: 0 23px;
+
+  border-radius: 12px;
+
+  font-size: 15px;
+  font-weight: 750;
+
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease,
+    background 0.2s ease;
+}
+
+.btn:hover {
+  transform: translateY(-2px);
+}
+
+
+/* PRIMARY */
+
+.btn.primary {
+  background: var(--primary);
+
+  color: white;
+
+  box-shadow:
+    0 12px 25px
+    rgba(99, 91, 255, 0.25);
+}
+
+.btn.primary:hover {
+  background: var(--primary-dark);
+}
+
+
+/* SECONDARY */
+
+.btn.secondary {
+  background: white;
+
+  color: #344054;
+
+  border: 1px solid var(--border);
+}
+
+.btn.secondary:hover {
+  background: #f9fafb;
+}
+
+
+/* =========================================================
+   5. HERO VISUAL
+   ========================================================= */
+
+.hero-visual {
+  position: relative;
+
+  min-height: 500px;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+}
+
+
+/* MAIN ACADEMY CARD */
+
+.academy-card {
+  width: min(
+    100%,
+    400px
+  );
+
+  min-height: 450px;
+
+  border-radius: 30px;
+
+  padding: 45px;
+
+  background:
+    linear-gradient(
+      145deg,
+      #111827,
+      #25314a
+    );
+
+  color: white;
+
+  box-shadow:
+    0 35px 70px
+    rgba(15, 23, 42, 0.25);
+
+  position: relative;
+
+  overflow: hidden;
+}
+
+.academy-card::before {
+  content: "";
+
+  position: absolute;
+
+  width: 250px;
+  height: 250px;
+
+  border-radius: 50%;
+
+  background: rgba(99, 91, 255, 0.2);
+
+  top: -100px;
+  right: -80px;
+
+  filter: blur(10px);
+}
+
+.academy-logo {
+  width: 62px;
+  height: 62px;
+
+  border-radius: 18px;
+
+  background: white;
+
+  color: #172033;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  font-weight: 900;
+
+  font-size: 19px;
+
+  margin-bottom: 30px;
+}
+
+.mini-label {
+  font-size: 11px;
+
+  letter-spacing: 3px;
+
+  font-weight: 800;
+
+  color: #aab4c8;
+
+  margin-bottom: 22px;
+}
+
+.academy-card h2 {
+  font-size: 47px;
+
+  line-height: 1.05;
+
+  letter-spacing: -2px;
+
+  margin-bottom: 30px;
+}
+
+.academy-line {
+  height: 2px;
+
+  width: 70px;
+
+  background: var(--primary);
+
+  margin-bottom: 25px;
+}
+
+.academy-card p {
+  color: #c5ccda;
+
+  font-size: 15px;
+}
+
+
+/* FLOATING CARDS */
+
+.floating-card {
+  position: absolute;
+
+  padding: 15px 20px;
+
+  background: white;
+
+  border: 1px solid var(--border);
+
+  border-radius: 14px;
+
+  box-shadow: var(--shadow-md);
+
+  font-size: 13px;
+
+  font-weight: 800;
+
+  z-index: 2;
+}
+
+.floating-top {
+  top: 55px;
+  left: -5px;
+}
+
+.floating-bottom {
+  bottom: 55px;
+  right: -5px;
+}
+
+
+/* =========================================================
+   6. HOME DASHBOARD / TOOLS SECTION
+   ========================================================= */
+
+.dashboard-section {
+  width: min(
+    calc(100% - 40px),
+    1200px
+  );
+
+  margin: 0 auto;
+
+  padding: 80px 0 100px;
+}
+
+.section-heading {
+  max-width: 700px;
+
+  margin-bottom: 40px;
+}
+
+.section-heading h2 {
+  font-size: clamp(
+    32px,
+    4vw,
+    48px
+  );
+
+  line-height: 1.1;
+
+  letter-spacing: -2px;
+
+  margin-bottom: 15px;
+}
+
+.section-heading p {
+  color: var(--muted);
+
+  font-size: 17px;
+}
+
+
+/* MAIN CARDS */
+
+.main-cards {
+  display: grid;
+
+  grid-template-columns:
+    repeat(3, 1fr);
+
+  gap: 18px;
+}
+
+
+/* HOME CARD */
+
+.main-card {
+  position: relative;
+
+  min-height: 255px;
+
+  padding: 28px;
+
+  border-radius: var(--radius-lg);
+
+  background: white;
+
+  border: 1px solid var(--border);
+
+  display: flex;
+
+  flex-direction: column;
+
+  transition:
+    transform 0.25s ease,
+    box-shadow 0.25s ease,
+    border-color 0.25s ease;
+
+  overflow: hidden;
+}
+
+.main-card:hover {
+  transform: translateY(-6px);
+
+  border-color:
+    rgba(99, 91, 255, 0.3);
+
+  box-shadow: var(--shadow-md);
+}
+
+
+/* CARD ICON */
+
+.card-icon {
+  width: 53px;
+  height: 53px;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 15px;
+
+  background: #f1f2ff;
+
+  font-size: 26px;
+
+  margin-bottom: 22px;
+}
+
+
+/* CARD CONTENT */
+
+.card-content {
+  flex: 1;
+}
+
+.main-card h3 {
+  font-size: 19px;
+
+  line-height: 1.25;
+
+  font-weight: 900;
+
+  letter-spacing: -0.3px;
+
+  margin-bottom: 9px;
+}
+
+.card-subtitle {
+  color: var(--primary);
+
+  font-size: 14px;
+
+  font-weight: 750;
+
+  margin-bottom: 10px;
+}
+
+.card-description {
+  color: var(--muted);
+
+  font-size: 14px;
+
+  line-height: 1.65;
+}
+
+
+/* CARD ARROW */
+
+.card-arrow {
+  margin-top: 22px;
+
+  font-size: 14px;
+
+  font-weight: 800;
+
+  color: var(--dark);
+}
+
+
+/* =========================================================
+   7. DASHBOARD PAGE
+   ========================================================= */
+
+.dashboard {
+  width: min(
+    calc(100% - 40px),
+    1200px
+  );
+
+  margin: 0 auto;
+
+  padding: 70px 0 100px;
+}
+
+
+/* WELCOME */
+
+.dashboard-welcome {
+  margin-bottom: 48px;
+}
+
+.dashboard-welcome h1 {
+  font-size: clamp(
+    38px,
+    5vw,
+    62px
+  );
+
+  line-height: 1.05;
+
+  letter-spacing: -3px;
+
+  font-weight: 900;
+
+  color: #111827;
+
+  margin-bottom: 12px;
+}
+
+.dashboard-welcome h1 span {
+  color: var(--primary);
+}
+
+.dashboard-welcome p {
+  font-size: 18px;
+
+  color: var(--muted);
+}
+
+
+/* DASHBOARD CARDS GRID */
+
+.dashboard-main-cards {
+  display: grid;
+
+  grid-template-columns:
+    repeat(3, 1fr);
+
+  gap: 20px;
+}
+
+
+/* DASHBOARD CARD */
+
+.dashboard-main-card {
+  min-height: 290px;
+
+  background: white;
+
+  border: 1px solid var(--border);
+
+  border-radius: 22px;
+
+  padding: 30px;
+
+  display: flex;
+
+  flex-direction: column;
+
+  justify-content: space-between;
+
+  box-shadow:
+    0 4px 15px
+    rgba(15, 23, 42, 0.03);
+
+  transition:
+    transform 0.25s ease,
+    box-shadow 0.25s ease,
+    border-color 0.25s ease;
+}
+
+.dashboard-main-card:hover {
+  transform: translateY(-7px);
+
+  border-color:
+    rgba(99, 91, 255, 0.28);
+
+  box-shadow:
+    0 20px 45px
+    rgba(15, 23, 42, 0.10);
+}
+
+
+/* DASHBOARD ICON */
+
+.dashboard-card-icon {
+  width: 58px;
+  height: 58px;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 17px;
+
+  background:
+    linear-gradient(
+      135deg,
+      #f0efff,
+      #f7f7ff
+    );
+
+  font-size: 27px;
+
+  margin-bottom: 23px;
+}
+
+
+/* DASHBOARD TITLE */
+
+.dashboard-main-card h3 {
+  font-size: 20px;
+
+  line-height: 1.25;
+
+  font-weight: 900;
+
+  letter-spacing: -0.4px;
+
+  color: #111827;
+
+  margin-bottom: 9px;
+}
+
+
+/* DASHBOARD SUBTITLE */
+
+.dashboard-card-subtitle {
+  color: var(--primary);
+
+  font-size: 14px;
+
+  font-weight: 750;
+
+  margin-bottom: 11px;
+}
+
+
+/* DASHBOARD DESCRIPTION */
+
+.dashboard-main-card p {
+  color: var(--muted);
+
+  font-size: 14px;
+
+  line-height: 1.7;
+}
+
+
+/* DASHBOARD ARROW */
+
+.dashboard-card-arrow {
+  margin-top: 25px;
+
+  color: #111827;
+
+  font-size: 14px;
+
+  font-weight: 850;
+}
+
+
+/* =========================================================
+   8. LOGIN MODAL
+   ========================================================= */
+
+.login-modal {
+  position: fixed;
+
+  inset: 0;
+
+  background:
+    rgba(15, 23, 42, 0.55);
+
+  display: none;
+
+  align-items: center;
+  justify-content: center;
+
+  padding: 20px;
+
+  z-index: 2000;
+
+  backdrop-filter: blur(5px);
+}
+
+.login-modal.show {
+  display: flex;
+}
+
+.login-modal-box {
+  width: min(
+    100%,
+    420px
+  );
+
+  background: white;
+
+  border-radius: 25px;
+
+  padding: 35px;
+
+  text-align: center;
+
+  position: relative;
+
+  box-shadow: var(--shadow-lg);
+}
+
+.modal-close {
+  position: absolute;
+
+  top: 15px;
+  right: 17px;
+
+  width: 35px;
+  height: 35px;
+
+  border: 0;
+
+  background: #f2f4f7;
+
+  border-radius: 50%;
+
+  font-size: 23px;
+
+  color: #475467;
+}
+
+.modal-icon {
+  font-size: 42px;
+
+  margin-bottom: 15px;
+}
+
+.login-modal-box h2 {
+  font-size: 27px;
+
+  margin-bottom: 10px;
+}
+
+.login-modal-box p {
+  color: var(--muted);
+
+  font-size: 15px;
+
+  margin-bottom: 25px;
+}
+
+.modal-buttons {
+  display: flex;
+
+  gap: 10px;
+
+  justify-content: center;
+}
+
+
+/* =========================================================
+   9. FOOTER
+   ========================================================= */
+
+footer {
+  background: #111827;
+
+  color: white;
+
+  margin-top: 30px;
+
+  padding: 55px 5% 25px;
+}
+
+.footer-content {
+  width: min(
+    100%,
+    1200px
+  );
+
+  margin: 0 auto;
+
+  text-align: center;
+}
+
+.footer-logo {
+  display: inline-flex;
+
+  margin-bottom: 18px;
+}
+
+.footer-logo span:last-child {
+  color: white;
+}
+
+.footer-content p {
+  color: #98a2b3;
+
+  font-size: 14px;
+}
+
+.copyright {
+  width: min(
+    100%,
+    1200px
+  );
+
+  margin: 40px auto 0;
+
+  padding-top: 20px;
+
+  border-top:
+    1px solid
+    rgba(255, 255, 255, 0.1);
+
+  color: #98a2b3;
+
+  text-align: center;
+
+  font-size: 12px;
+}
+
+
+/* =========================================================
+   10. MOBILE NAVIGATION
+   ========================================================= */
+
+@media (max-width: 850px) {
+
+  .navbar {
+    height: 74px;
+
+    padding: 0 20px;
+  }
+
+  .logo-box {
+    width: 45px;
+    height: 45px;
+
+    border-radius: 13px;
+  }
+
+  .logo-name {
+    font-size: 17px;
+  }
+
+  .menu-button {
+    display: flex;
+  }
+
+  .navbar nav {
+    position: absolute;
+
+    top: 74px;
+
+    left: 15px;
+    right: 15px;
+
+    display: none;
+
+    flex-direction: column;
+
+    align-items: stretch;
+
+    gap: 4px;
+
+    padding: 12px;
+
+    background: white;
+
+    border: 1px solid var(--border);
+
+    border-radius: 18px;
+
+    box-shadow: var(--shadow-lg);
+  }
+
+  .navbar nav.mobile-open {
+    display: flex;
+  }
+
+  .navbar nav a,
+  .nav-logout,
+  .menu-logout-button {
+    width: 100%;
+
+    text-align: left;
+
+    padding: 13px 15px;
+  }
+
+  .nav-register {
+    text-align: center !important;
+  }
+
+
+  /* HERO */
+
+  .hero {
+    grid-template-columns: 1fr;
+
+    gap: 45px;
+
+    padding: 60px 0 70px;
+
+    min-height: auto;
+  }
+
+  .hero-content {
+    text-align: center;
+
+    margin: 0 auto;
+  }
+
+  .hero .eyebrow {
+    margin-bottom: 15px;
+  }
+
+  .hero h1 {
+    font-size: clamp(
+      42px,
+      11vw,
+      65px
+    );
+
+    letter-spacing: -3px;
+  }
+
+  .hero p {
+    font-size: 17px;
+
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .hero-buttons {
+    justify-content: center;
+  }
+
+
+  /* HERO VISUAL */
+
+  .hero-visual {
+    min-height: 450px;
+  }
+
+  .academy-card {
+    width: min(
+      88%,
+      390px
+    );
+
+    min-height: 410px;
+
+    padding: 35px;
+  }
+
+  .academy-card h2 {
+    font-size: 42px;
+  }
+
+  .floating-top {
+    top: 20px;
+    left: 0;
+  }
+
+  .floating-bottom {
+    bottom: 20px;
+    right: 0;
+  }
+
+
+  /* HOME CARDS */
+
+  .main-cards {
+    grid-template-columns:
+      repeat(2, 1fr);
+  }
+
+
+  /* DASHBOARD */
+
+  .dashboard {
+    padding-top: 50px;
+  }
+
+  .dashboard-main-cards {
+    grid-template-columns:
+      repeat(2, 1fr);
+  }
+}
+
+
+/* =========================================================
+   11. SMALL MOBILE
+   ========================================================= */
+
+@media (max-width: 600px) {
+
+  .container {
+    width: min(
+      calc(100% - 28px),
+      var(--container)
+    );
+  }
+
+  .navbar {
+    padding: 0 14px;
+  }
+
+  .logo {
+    gap: 9px;
+  }
+
+  .logo-name {
+    font-size: 16px;
+  }
+
+  .logo-box {
+    width: 44px;
+    height: 44px;
+
+    font-size: 15px;
+  }
+
+  .menu-button {
+    width: 48px;
+    height: 48px;
+
+    font-size: 25px;
+  }
+
+
+  /* HERO */
+
+  .hero {
+    width: calc(100% - 28px);
+
+    padding: 50px 0 60px;
+
+    gap: 35px;
+  }
+
+  .hero h1 {
+    font-size: 43px;
+
+    letter-spacing: -2.5px;
+  }
+
+  .hero p {
+    font-size: 16px;
+
+    line-height: 1.65;
+  }
+
+  .btn {
+    min-height: 46px;
+
+    padding: 0 19px;
+
+    font-size: 14px;
+  }
+
+
+  /* HERO CARD */
+
+  .hero-visual {
+    min-height: 390px;
+  }
+
+  .academy-card {
+    min-height: 365px;
+
+    padding: 30px;
+
+    border-radius: 25px;
+  }
+
+  .academy-logo {
+    width: 54px;
+    height: 54px;
+
+    margin-bottom: 23px;
+  }
+
+  .academy-card h2 {
+    font-size: 37px;
+  }
+
+  .academy-card p {
+    font-size: 14px;
+  }
+
+  .floating-card {
+    padding: 11px 14px;
+
+    font-size: 11px;
+
+    border-radius: 11px;
+  }
+
+
+  /* SECTION */
+
+  .dashboard-section {
+    width: calc(100% - 28px);
+
+    padding: 60px 0 70px;
+  }
+
+  .section-heading {
+    margin-bottom: 28px;
+  }
+
+  .section-heading h2 {
+    font-size: 32px;
+
+    letter-spacing: -1.5px;
+  }
+
+  .section-heading p {
+    font-size: 15px;
+  }
+
+
+  /* HOME CARDS */
+
+  .main-cards {
+    grid-template-columns: 1fr;
+
+    gap: 14px;
+  }
+
+  .main-card {
+    min-height: 230px;
+
+    padding: 23px;
+
+    border-radius: 19px;
+  }
+
+  .card-icon {
+    width: 50px;
+    height: 50px;
+
+    font-size: 24px;
+
+    margin-bottom: 17px;
+  }
+
+  .main-card h3 {
+    font-size: 18px;
+  }
+
+
+  /* DASHBOARD */
+
+  .dashboard {
+    width: calc(100% - 28px);
+
+    padding: 48px 0 70px;
+  }
+
+  .dashboard-welcome {
+    margin-bottom: 30px;
+  }
+
+  .dashboard-welcome .eyebrow {
+    font-size: 11px;
+
+    letter-spacing: 3px;
+  }
+
+  .dashboard-welcome h1 {
+    font-size: 38px;
+
+    letter-spacing: -2px;
+  }
+
+  .dashboard-welcome p {
+    font-size: 16px;
+  }
+
+  .dashboard-main-cards {
+    grid-template-columns: 1fr;
+
+    gap: 14px;
+  }
+
+  .dashboard-main-card {
+    min-height: 250px;
+
+    padding: 23px;
+
+    border-radius: 19px;
+  }
+
+  .dashboard-card-icon {
+    width: 51px;
+    height: 51px;
+
+    font-size: 24px;
+
+    margin-bottom: 18px;
+  }
+
+  .dashboard-main-card h3 {
+    font-size: 18px;
+  }
+
+  .dashboard-main-card p {
+    font-size: 14px;
+  }
+
+
+  /* FOOTER */
+
+  footer {
+    padding: 45px 20px 22px;
+  }
+
+  .footer-logo {
+    font-size: 16px;
+  }
+}
+
+
+/* =========================================================
+   12. EXTRA SMALL DEVICES
+   ========================================================= */
+
+@media (max-width: 380px) {
+
+  .logo-name {
+    font-size: 14px;
+  }
+
+  .hero h1 {
+    font-size: 38px;
+  }
+
+  .dashboard-welcome h1 {
+    font-size: 34px;
+  }
+
+  .academy-card {
+    padding: 25px;
+  }
+
+  .academy-card h2 {
+    font-size: 33px;
+  }
+
+  .floating-card {
+    font-size: 10px;
+
+    padding: 9px 11px;
+  }
+}
+
+
+/* =========================================================
+   13. ACCESSIBILITY
+   ========================================================= */
+
+:focus-visible {
+  outline: 3px solid
+    rgba(99, 91, 255, 0.35);
+
+  outline-offset: 3px;
+}
+
+
+/* =========================================================
+   14. REDUCED MOTION
+   ========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+  *,
+  *::before,
+  *::after {
+    scroll-behavior: auto !important;
+
+    transition: none !important;
+
+    animation: none !important;
+  }
+}
